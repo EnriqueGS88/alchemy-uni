@@ -14,11 +14,13 @@ function addTransaction(transaction) {
 
 function mine() {
     // TODO: mine a block
-    // SHA256(blocks, mempool);
-    const newBlock = {
-        id: 0,
-    }
+    let newId;
 
+    ( blocks.length == 0 ? newId = 0 : newId = blocks.length );
+    
+    const newBlock = {
+        id: newId,
+    }
 
     blocks.push( newBlock );
 

@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const { mine, blocks } = require('../index');
+const { mine, blocks } = require('../week1/mine');
 const SHA256 = require('crypto-js/sha256');
 
 describe('mine', () => {
@@ -28,7 +28,9 @@ describe('mine', () => {
         it('should store the expected id', () => {
             const lastBlock = blocks[blocks.length - 1];
             assert(lastBlock.id != null, "did not find an id property on the block");
+            console.log( blocks );
             assert.equal(lastBlock.id, 1);
+
         });
     });
 });
