@@ -2,8 +2,8 @@ const SHA256 = require('crypto-js/sha256');
 const TARGET_DIFFICULTY = BigInt(0x0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff);
 const MAX_TRANSACTIONS = 10;
 
-const mempool = [];
-const blocks = [];
+let mempool = [];
+let blocks = [];
 
 function addTransaction(transaction) {
     // TODO: add transaction to mempool
@@ -15,15 +15,19 @@ function mine() {
     let newId;
     (blocks.length == 0 ? newId = 0 : newId = blocks.length);
 
+    let mempoolSelect = mempool.slice( 0, MAX_TRANSACTIONS );
+
     let newBlock = {
         id: newId,
+        transactions: mempoolSelect,
     }
 
-    const blockString = JSON.stringify( newBlock );
-    const blockHash = SHA256( blockString );
+    let blockString = JSON.stringify(newBlock);
+    let blockHash = SHA256(blockString);
 
     newBlock.hash = blockHash;
-    blocks.push(newBlock);
+    blocks.push( newBlock );
+    mempool.splice( 0, MAX_TRANSACTIONS );
 
 }
 
