@@ -11,12 +11,16 @@ class Blockchain {
 
     addBlock( block ) {
 
+        // If this is the very first block, just call it "genesis"
         let previousBlockNumber = ( this.chain.length == 0 ? "genesis" : this.chain.length -1 );
 
         let blockHash;
 
         if( previousBlockNumber != "genesis" ) {
             
+            // for non-genesis blocks, calculate the hash of the previous block by hashing both:
+            // 1) the data of the previous block
+            // 2) the hash of the previous block
             let prevData = this.chain[ previousBlockNumber ].data;
             let prevHash = this.chain[ previousBlockNumber ].previousHash;
 
