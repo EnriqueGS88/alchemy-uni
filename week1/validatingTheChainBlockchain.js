@@ -39,7 +39,7 @@ class Blockchain {
 
         let isValidChain = [];
 
-        for ( let i = 0; i < this.chain.length; i++ ) {
+        for ( let i = 0; i < this.chain.length-1; i++ ) {
             let blockData = this.chain[ i ].data;
             let blockPrevHash = this.chain[ i ].previousHash;
 
@@ -53,14 +53,14 @@ class Blockchain {
 
         }
 
-        // console.log( isValidChain );
+        console.log( isValidChain );
 
-        if ( isValidChain.find( element => element == false ) == undefined )  {
+        if ( isValidChain.includes( false ) == true )  {
 
-            return isValidChain;
+            return false;
 
         } else {
-            return isValidChain;
+            return true;
         }
 
     }
@@ -68,3 +68,4 @@ class Blockchain {
 }
 
 module.exports = Blockchain;
+
