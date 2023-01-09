@@ -1,5 +1,5 @@
-const Blockchain = require('../week1/addingBlock');
-const Block = require('../week1/whatsInAHash');
+const Blockchain = require('../addingBlock');
+const Block = require('../whatsInAHash');
 const assert = require('assert');
 
 let blockchain;
