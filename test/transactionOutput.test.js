@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const TXO = require('../TXO');
+const TXO = require('../week2/transactionOutput');
 
 describe('TXO', function () {
     const address = "1DBS97W3jWw6FnAqdduK1NW6kFo3Aid1N6";
