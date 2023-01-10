@@ -1,6 +1,6 @@
 const { assert } = require('chai');
-const Transaction = require('../Transaction');
-const TXO = require('../TXO');
+const Transaction = require('../week2/spentTXO_Transaction');
+const TXO = require('../week2/spentTXO_TXO');
 
 describe('Transaction', function () {
     const fromAddress = "1DBS97W3jWw6FnAqdduK1NW6kFo3Aid1N6";
