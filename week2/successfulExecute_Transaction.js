@@ -31,6 +31,9 @@ class Transaction {
             throw new Error( "total output amounts differ from total input amounts" );
         }
 
+        // Call the .spend() function for each single element in the array
+        this.inputUTXOs.forEach( element => element.spend() );
+
         
         
     }
