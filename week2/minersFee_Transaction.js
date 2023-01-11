@@ -27,7 +27,7 @@ class Transaction {
         const outputAmounts =  outputAmountsArray.reduce( ( acc, curr ) => acc + curr );
         const amountsComparison = inputAmounts - outputAmounts;
 
-        if ( amountsComparison >= 0 ) {
+        if ( amountsComparison < 0 ) {
             throw new Error( "total output amounts differ from total input amounts" );
         }
 
