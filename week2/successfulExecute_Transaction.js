@@ -18,12 +18,11 @@ class Transaction {
             throw new Error( "tx has already been spent" );
         }
         
-        
+        // Create new array to store only the amounts of each inputTXO
         const inputAmountsArray = this.inputUTXOs.map( element => element.amount );
         const outputAmountsArray = this.outputUTXOs.map( element => element.amount );
 
         // Use reduce to get the Summatory of an Array
-
         const inputAmounts =  inputAmountsArray.reduce( ( acc, curr ) => acc + curr );
         const outputAmounts =  outputAmountsArray.reduce( ( acc, curr ) => acc + curr );
         const amountsComparison = inputAmounts - outputAmounts;
