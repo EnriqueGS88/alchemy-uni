@@ -7,3 +7,13 @@ class Node {
 }
 
 module.exports = Node;
+
+// const test = () => {
+
+//     const newnode = new Node( 3 );
+
+//     console.log( newnode.data );
+
+// }
+
+// test();

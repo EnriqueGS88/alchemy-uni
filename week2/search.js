@@ -1,3 +1,5 @@
+const Node = require('../week2/node');
+
 class Tree {
     constructor() {
         this.root = null;
@@ -51,3 +53,15 @@ class Tree {
 }
 
 module.exports = Tree;
+
+// const test = () => {
+
+//     const tree = new Tree();
+
+//     const output = tree.addNode(new Node(4));
+
+//     console.log( output );
+
+// }
+
+// test();
