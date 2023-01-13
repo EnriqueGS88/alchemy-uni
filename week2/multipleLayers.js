@@ -14,7 +14,7 @@ class MerkleTree {
 
     _getRoot( arr ) {
 
-        if ( arr.length == 2 ) {
+        if ( arr.length === 2 ) {
             return this.concat( arr[0], arr[1] );
         } else {
 
