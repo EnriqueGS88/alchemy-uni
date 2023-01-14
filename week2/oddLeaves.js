@@ -21,20 +21,27 @@ class MerkleTree {
 
         const isOddNumber = checkOddNumber( this.leaves );
 
+        console.log( isOddNumber );
+
         
+        // Problem Found: line 36 loops infinitely
+        // Because the currentLayer will always be > 1.. it's actually 2
+        // Why did the test pass in the previous testing ?
+
         if ( isOddNumber == true ) {
 
             let currentLayer = this.leaves;
             
-            while (currentLayer.length > 1) {
+            while (currentLayer.length > 2) {
       
               const nextLayer = [];
       
-              for (let i = 0; i < currentLayer.length; i += 2) {
+              for (let i = 0; i < currentLayer.length - 1; i += 2) {
                 nextLayer.push(this.concat(currentLayer[i], currentLayer[i + 1]));
+                console.log( nextLayer );
               }
 
-              nextLayer.push(this.concat(currentLayer[ currentLayer.length ] ) );
+              nextLayer.push( currentLayer[ currentLayer.length - 1 ] );
       
               currentLayer = nextLayer;
 
