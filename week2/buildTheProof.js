@@ -35,18 +35,19 @@ class MerkleTree {
         }
         let proof = [];
         let currentLayer = this.leaves;
-        let currentIndex = index;
+        // let currentIndex = index;
 
-        console.log( "current layer:", currentLayer );
+        console.log( "current layer:", currentLayer.length );
 
         while (currentLayer.length > 1) {
-            const isRightNode = currentIndex % 2 === 1;
-            const pairIndex = isRightNode ? currentIndex - 1 : currentIndex + 1;
+            const isRightNode = index % 2 === 1;
+            const pairIndex = isRightNode ? index - 1 : index + 1;
             proof.push({
-                data: currentLayer[pairIndex],
-                left: !isRightNode
+              data: currentLayer[pairIndex],
+              left: !isRightNode
             });
-            currentIndex = Math.floor(currentIndex / 2);
+            index = Math.floor(index / 2);
+            // Problem is here: this.layers is an empty array []
             currentLayer = this.layers[this.layers.length - 1 - proof.length];
         }
 

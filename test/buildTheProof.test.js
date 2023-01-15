@@ -11,6 +11,9 @@ describe('merkle proof', function() {
   describe('for each leaf', function() {
     leaves.forEach((leaf, i) => {
       it(`should return a proof that calculates the root from leaf ${leaves[i]}`, function() {
+        console.log( "tree: ", hashTree );
+        console.log( "leaf: ", leaf );
+        console.log( "index: ", i );      
         const proof = hashTree.getProof(i);
         const hashedProof = hashProof(leaf, proof).toString('hex');
         if(hashedProof !== root) {
@@ -18,7 +21,7 @@ describe('merkle proof', function() {
           console.log(
             "The resulting hash of your proof is wrong. \n" +
             `We were expecting: ${root} \n` +
-            `We recieved: ${hashedProof} \n` +
+            `We received: ${hashedProof} \n` +
             `In ${leaves.join('')} Merkle tree, the proof of ${leaves[i]} you gave us is: \n` +
             `${JSON.stringify(lettersProof, null, 2)}`
           );
