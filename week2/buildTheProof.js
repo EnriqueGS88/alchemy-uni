@@ -27,6 +27,8 @@ class MerkleTree {
       return currentLayer[0];
     }
 
+    // Fix: Cannot read "length" property of "undefined" array
+    // In line 42
     getProof(index) {
         if (index < 0 || index >= this.leaves.length) {
             throw new Error("Invalid index");
