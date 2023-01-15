@@ -6,24 +6,24 @@ class MerkleTree {
   }
 
   getRoot() {
-      let currentLayer = this.leaves;
+    let currentLayer = this.leaves;
 
-      while (currentLayer.length > 1) {
-        
-        const nextLayer = [];
+    while (currentLayer.length > 1) {
+      
+      const nextLayer = [];
 
-          for (let i = 0; i < currentLayer.length - 1; i += 2) {
-            nextLayer.push(this.concat(currentLayer[i], currentLayer[i + 1]));
-          }
-
-          if (currentLayer.length % 2 === 1) {
-            nextLayer.push(currentLayer[currentLayer.length - 1]);
-          }
-
-          currentLayer = nextLayer;
+      for (let i = 0; i < currentLayer.length - 1; i += 2) {
+        nextLayer.push(this.concat(currentLayer[i], currentLayer[i + 1]));
       }
 
-      return currentLayer[0];
+      if (currentLayer.length % 2 === 1) {
+        nextLayer.push(currentLayer[currentLayer.length - 1]);
+      }
+
+      currentLayer = nextLayer;
+    }
+
+    return currentLayer[0];
   }
 }
 
