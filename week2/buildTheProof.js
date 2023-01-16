@@ -48,7 +48,8 @@ class MerkleTree {
             });
             index = Math.floor(index / 2);
             // Problem is here: this.layers is an empty array []
-            currentLayer = this.layers[this.layers.length - 1 - proof.length];
+            // currentLayer = this.layers[this.layers.length - 1 - proof.length];
+            currentLayer = currentLayer.length - 1 - proof.length;
         }
 
         return proof;
@@ -57,3 +58,4 @@ class MerkleTree {
   }
   
   module.exports = MerkleTree;
+
