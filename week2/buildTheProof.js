@@ -29,6 +29,8 @@ class MerkleTree {
 
     // Fix: Cannot read "length" property of "undefined" array
     // In line 42
+    // Calculated Proof does not match
+    // Computed proof changes for every node
     getProof(index) {
         if (index < 0 || index >= this.leaves.length) {
             throw new Error("Invalid index");
