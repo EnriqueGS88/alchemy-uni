@@ -27,21 +27,21 @@ class MerkleTree {
       return currentLayer[0];
     }
 
-      buildTree(nodes) {
-        if (nodes.length === 1) {
-            return nodes;
-        }
+    //   buildTree(nodes) {
+    //     if (nodes.length === 1) {
+    //         return nodes;
+    //     }
 
-        const layer = [];
-        for (let i = 0; i < nodes.length; i += 2) {
-            const left = nodes[i];
-            const right = nodes[i + 1];
-            const concatenated = this.concat(left, right);
-            layer.push(concatenated);
-        }
-        this.layers.push(layer);
-        return this.buildTree(layer);
-    }
+    //     const layer = [];
+    //     for (let i = 0; i < nodes.length; i += 2) {
+    //         const left = nodes[i];
+    //         const right = nodes[i + 1];
+    //         const concatenated = this.concat(left, right);
+    //         layer.push(concatenated);
+    //     }
+    //     this.layers.push(layer);
+    //     return this.buildTree(layer);
+    // }
 
 
     getProof(index) {
@@ -60,7 +60,8 @@ class MerkleTree {
               left: !isLeftNode
           });
           index = Math.floor(index / 2);
-          currentLayer = this.buildTree(this.leaves);
+          // currentLayer = this.buildTree(this.leaves);
+          currentLayer = currentLayer.pop( currentLayer.length );
 
       }
 
