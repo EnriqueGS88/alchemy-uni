@@ -52,58 +52,45 @@ class MerkleTree {
       let currentLayer = this.leaves;
       // let currentIndex = index;
 
-      while (currentLayer.length > 1) {
-          let isLeftNode = index % 2 === 0;
-          let pairIndex = isLeftNode ? index + 1 : index - 1;
-          proof.push({
-              data: currentLayer[pairIndex],
-              left: !isLeftNode
-          });
-          index = Math.floor(index / 2);
-          // currentLayer = this.buildTree(this.leaves);
-          currentLayer = currentLayer.pop( currentLayer.length );
-
-      }
-
-      return proof;
-    }
+      
+      // while (currentLayer.length > 1) {
+        //     let isLeftNode = index % 2 === 0;
+        //     let pairIndex = isLeftNode ? index + 1 : index - 1;
+        //     proof.push({
+        //         data: currentLayer[pairIndex],
+        //         left: !isLeftNode
+        //     });
+        //     index = Math.floor(index / 2);
+        // }
 
 
+          // 1 - Get pair index
+          // 2 - Get last index of array
+          // 3 - Summatory of all other leaves - in pairs
+          // 4 - Convert the array into an Object with 3 properties
 
-    /*
-    // Fix: Cannot read "length" property of "undefined" array
-    // In line 42
-    // Calculated Proof does not match
-    // Computed proof changes for every node
-    getProof(index) {
-        if (index < 0 || index >= this.leaves.length) {
-            throw new Error("Invalid index");
-        }
-        let proof = [];
-        let currentLayer = this.leaves;
-        // let currentIndex = index;
-
-        console.log( "current layer:", currentLayer.length );
-
-        while (currentLayer.length > 1) {
-          let isLeftNode = index % 2 === 0;
-          let pairIndex = isLeftNode ? index + 1 : index - 1;
-          proof.push({
+      for ( let i = 0; i < currentLayer.length; i++ ) {
+        let isLeftNode = index % 2 === 0;
+        let pairIndex = isLeftNode ? index + 1 : index - 1;
+        proof.push({
             data: currentLayer[pairIndex],
             left: !isLeftNode
-          });
-          index = Math.floor(index / 2);
+        });
+      }
 
-          // Problem is here: this.layers is an empty array []
-          console.log( "layer before: ", currentLayer );
-          // currentLayer = this.layers[this.layers.length - 1 - proof.length];
-          console.log( "layer after: ", currentLayer );
 
-        }
 
-        return proof;
+
+      return proof;
+
+
+
     }
-    */
+
+
+
+
+
 
   }
   

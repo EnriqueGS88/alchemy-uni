@@ -5,7 +5,8 @@ const MerkleTree = require('./buildTheProof');
 
 const test = () => {
     
-    const leaves = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    // const leaves = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+    const leaves = ['A', 'B', 'C', 'D', 'E'];
     
     const lettersTree = new MerkleTree(leaves, concatLetters);
 
@@ -15,7 +16,12 @@ const test = () => {
 
     leaves.forEach( (leaf, i) => {
 
+
+        console.log( leaves )
+
         const proof = lettersTree.getProof(i);
+
+        console.log( proof );
 
         proofArray.push( proof );
 
