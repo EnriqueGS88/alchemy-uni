@@ -52,6 +52,41 @@ class MerkleTree {
       let currentLayer = this.leaves;
       // let currentIndex = index;
 
+      // 1 - Get pair index
+      let isLeftNode = index % 2 === 0;
+      let pairIndex = isLeftNode ? index + 1 : index - 1;
+      proof.push({
+        data: currentLayer[pairIndex],
+        left: !isLeftNode
+      });
+
+      // 2 - Get last index of array
+      let lastNode = currentLayer[ currentLayer.length -1 ];
+      proof.push({
+        data: lastNode,
+        left: false
+      });
+
+      // 3 - Summatory of all other leaves - in pairs
+      if( index > 1 ) {
+        let summatoryNode = currentLayer[ currentLayer.length -1 ]
+
+      } else {
+
+      }
+
+
+
+      // 4 - Convert the array into an Object with 3 properties
+
+
+      
+      // for ( let i = 0; i < currentLayer.length -1; i++ ) {
+
+      // }
+
+      return proof;
+      
       
       // while (currentLayer.length > 1) {
         //     let isLeftNode = index % 2 === 0;
@@ -62,28 +97,6 @@ class MerkleTree {
         //     });
         //     index = Math.floor(index / 2);
         // }
-
-
-          // 1 - Get pair index
-          // 2 - Get last index of array
-          // 3 - Summatory of all other leaves - in pairs
-          // 4 - Convert the array into an Object with 3 properties
-
-      for ( let i = 0; i < currentLayer.length; i++ ) {
-        let isLeftNode = index % 2 === 0;
-        let pairIndex = isLeftNode ? index + 1 : index - 1;
-        proof.push({
-            data: currentLayer[pairIndex],
-            left: !isLeftNode
-        });
-      }
-
-
-
-
-      return proof;
-
-
 
     }
 

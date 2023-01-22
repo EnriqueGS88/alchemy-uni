@@ -16,16 +16,9 @@ const test = () => {
 
     leaves.forEach( (leaf, i) => {
 
-
-        console.log( leaves )
-
         const proof = lettersTree.getProof(i);
 
-        console.log( proof );
-
         proofArray.push( proof );
-
-        console.log( i );
 
 
     } );
