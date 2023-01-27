@@ -69,7 +69,7 @@ class MerkleTree {
 
       // 3 - Summatory of all other leaves - in pairs
       if( index > 1 ) {
-        let summatoryNode = currentLayer[ currentLayer.length -1 ]
+        let summatoryNode = currentLayer[ currentLayer.length -1 ] - currentLayer[ currentLayer.length -1 ];
 
       } else {
 
