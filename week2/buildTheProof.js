@@ -68,8 +68,26 @@ class MerkleTree {
       });
 
       // 3 - Summatory of all other leaves - in pairs
-      if( index > 1 ) {
-        let summatoryNode = currentLayer[ currentLayer.length -1 ] - currentLayer[ currentLayer.length -1 ];
+      for ( let i = 0; i < currentLayer.length; i++ ) {
+
+        singleTuple = [];
+        singleTuple.push( i );
+        singleTuple.push( i + 1 );
+
+        tuples.push( singleTuple );
+
+      };
+
+      let tupleOfCurrentIndex = tuples.indexOf( index );
+
+
+      if( index > tupleOfCurrentIndex ) {
+
+        proof.push( 
+          {
+            
+          }
+        )
 
       } else {
 
