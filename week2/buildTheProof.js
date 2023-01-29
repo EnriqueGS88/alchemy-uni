@@ -78,7 +78,7 @@ class MerkleTree {
 
       };
 
-      let tupleOfCurrentIndex = tuples.indexOf( index );
+      // let tupleOfCurrentIndex = tuples.indexOf( index );
 
 
       if( index > tupleOfCurrentIndex ) {
