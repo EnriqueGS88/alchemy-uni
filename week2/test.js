@@ -1,5 +1,5 @@
 const {assert} = require("chai");
-const {hashProof, sha256, concatHash, concatLetters} = require('../test/buildTheProofUtil.test.js');
+const {concatLetters} = require('../test/buildTheProofUtil.test.js');
 const MerkleTree = require('./buildTheProof');
 
 
