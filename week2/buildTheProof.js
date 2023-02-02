@@ -68,23 +68,18 @@ class MerkleTree {
       });
 
       // 3 - Summatory of all other leaves - in pairs
-      for ( let i = 0; i < currentLayer.length; i+2 ) {
+      console.log( "start for loop" );
+      for ( let i = 0; i < currentLayer.length - 1; i += 2 ) {
 
         console.log( "this is iteration: ", i );
 
-        if ( i = currentLayer.length - 1 ) {
-          break;
-        }
+        // if ( i = currentLayer.length - 1 ) {
+        //   break;
+        // }
 
         if( ( i === index ) || ( i + 1 === index )  ) {
           continue;
         }
-
-        // singleTuple = [];
-        // singleTuple.push( i );
-        // singleTuple.push( i + 1 );
-
-        // tuples.push( singleTuple );
 
         let pair = currentLayer[ i ] + currentLayer[ i + 1 ];
 
